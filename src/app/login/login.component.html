@@ -1,0 +1,56 @@
+<div class="container show">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h6>Please enter email & password</h6>
+                </div>
+                <form>
+                    <form id="form" [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input #email  formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email" >
+                                <span *ngIf="x['email'].getError('required')!=null && loginClicked==true" class="errormessage">Email is required field</span>
+                                <span *ngIf="x['email'].getError('email')!=null && loginClicked==true" class="errormessage">Invalid mail</span>
+                                 
+                            <!-- <span class="text-danger"
+                                *ngIf=" loginClicked==true && loginForm.hasError('required','email')">Email is
+                                required</span> -->
+                            <br>
+                            <!-- <span class="text-danger" *ngIf="  loginClicked==true ">Email type is
+                                false</span> -->
+                            <span id="text"></span>    
+                            <!-- <div *ngIf="email?.touched ">
+                                    email is required.
+                                  </div> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input formControlName="password" type="password" class="form-control"
+                                id="password" placeholder="Password">
+                                <span *ngIf="x['password'].getError('required')!=null && loginClicked==true" class="errormessage">Password is required field</span>
+                                <span *ngIf="x['password'].getError('minlength')!=null && loginClicked==true" class="errormessage">Password must be at least 6, at most 20 charachters</span>
+                                <span *ngIf="x['password'].getError('maxlength')!=null && loginClicked==true" class="errormessage">Password must be at least 6, at most 20 charachters</span>
+
+                            <!-- <span class="text-danger"
+                                *ngIf=" loginClicked==true && loginForm.hasError('required','password')">Password is
+                                required</span> -->
+
+                        </div>
+                        <div class="form-check my-2">
+                            <input formControlName="rememberMe" type="checkbox" (click)="a()" [(ngModel)]="rememberMe" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-3">Login</button>
+                    </form>
+                    <a style="color: white" routerLink="/signup">New user? Click to Signup!!</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus officiis doloribus sit ipsam, molestiae provident recusandae esse natus quisquam libero. -->

@@ -29,7 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/myJsFile.js"]
           },
           "configurations": {
             "production": {
@@ -96,11 +96,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/js/myJsFile.js"]
           }
         }
       }
     }
   },
-  "defaultProject": "ptnpro"
+  "cli": {
+    "analytics": false
+  }
 }

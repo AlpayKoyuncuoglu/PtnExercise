@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h6>Register Yourself!!</h6>
+                </div>
+                <form>
+                    <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                        <div class="mb-3">
+                            <label for="name">Full Name</label>
+                            <input formControlName="name" type="text" class="form-control" id="name">
+                            <span *ngIf="x['name'].getError('required')!=null && registerClicked==true"
+                                class="errormessage">Full Name is required field</span>
+
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="exampleInputPassword1">Mobile Number</label>
+                            <input formControlName="mobile" type="number" class="form-control" id="exampleInputPassword1"
+                               >
+                        </div> -->
+                        <div class="mb-3">
+                            <label for="exampleInpemailutEmail1">Email address</label>
+                            <input formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            <span *ngIf="x['email'].getError('required')!=null && registerClicked==true"
+                                class="errormessage">Email is required field</span>
+                            <span *ngIf="x['email'].getError('email')!=null && registerClicked==true"
+                                class="errormessage">Invalid mail</span>
+
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small> -->
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="" class="form-label">Mobile Number</label>
+                           <input value="" class="form-control" matInput placeholder="(XXX) XXX-XXXX" mask="(000) 000-00-00">
+                        </div> -->
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input  #password formControlName="password" type="password" class="form-control"
+                                id="password"
+                               >
+                               <!-- [pattern]="validPattern" -->
+                               <!-- pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/" -->
+                            <span *ngIf="x['password'].getError('required')!=null && registerClicked==true"
+                                class="errormessage">Password is required field</span>
+                            <span *ngIf="x['password'].getError('minlength')!=null && registerClicked==true"
+                                class="errormessage">Password must be at least 6, at most 20 charachters</span>
+                            <span *ngIf="x['password'].getError('maxlength')!=null && registerClicked==true"
+                                class="errormessage">Password must be at least 6, at most 20 charachters</span>
+                                <!-- <div class="errormessage" *ngIf="x['password'].getError('pattern')" >invalid</div> -->
+                            <!-- <div *ngIf="x['password'].errors?.pattern" class="">pattern</div> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword2">Confirm Password</label>
+                            <input #conpassword formControlName="conpassword" type="password" class="form-control"
+                                id="exampleInputPassword2">
+                            <span *ngIf="x['conpassword'].getError('required')!=null && registerClicked==true"
+                                class="errormessage">Password is required field</span>
+                            <span *ngIf="x['conpassword'].getError('Mustmatch')!=null && registerClicked==true"
+                                class="errormessage">Password mismatch</span>
+                            <!-- <span *ngIf="(password.value!=null && conpassword.value==null)" > Password mismatch</span> -->
+
+                            <!-- <span class="">Password must be at least 6 letters</span> -->
+                        </div>
+                        <!-- <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary mb-2">Sign Up</button>
+                    </form>
+                    <a style="color: white" routerLink="/login">Already registered? Click to Login!!</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
