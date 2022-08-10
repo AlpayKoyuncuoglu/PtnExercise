@@ -1,3 +1,8 @@
+Projeyi ayağa kaldırdıktan sonra api bağlantısı yaparken cors hatası alırsanız, chrome.exe dosyasının olduğu dizinine geliniz.
+Ardından cmd ekranına gelip şu kodu çalıştırınız; 
+chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+Api bağlantıları başarıyla gerçekleşecektir.
+
 # Ptnpro
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
