@@ -1,5 +1,5 @@
 Projeyi ayağa kaldırdıktan sonra api bağlantısı yaparken cors hatası alırsanız, chrome.exe dosyasının olduğu dizinine geliniz.
-Ardından cmd ekranına gelip şu kodu çalıştırınız; 
+Ardından bu dizinde cmd ekranını açıp şu kodu çalıştırınız; 
 chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
 Api bağlantıları başarıyla gerçekleşecektir.
 
